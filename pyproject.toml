@@ -1,0 +1,25 @@
+[build-system]
+requires = ["setuptools>=68.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "sgrep"
+version = "0.1.0"
+description = "Local semantic search CLI for logs, dotfiles, and notes."
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "sentence-transformers>=3.0.0",
+    "numpy>=1.26.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.0.0",
+]
+
+[project.scripts]
+sgrep = "sgrep.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
